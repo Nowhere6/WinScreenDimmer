@@ -1,0 +1,6 @@
+﻿<mui:ModernWindow x:Class="WinScreenDimmer.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+  Title="Win Screen Dimmer" Height="320" Width="400" ContentSource="/HomePage.xaml" ResizeMode="CanMinimize" IsTitleVisible="True" Closed="ModernWindow_Closed" StateChanged="ModernWindow_StateChanged">
+</mui:ModernWindow>
