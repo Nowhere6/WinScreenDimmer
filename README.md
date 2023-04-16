@@ -1,11 +1,13 @@
 ![plot](./Extra/icon.png)
 # WinScreenDimmer
-Screen dimmer for Windows.
+Screen dimmer for Windows. Easy to adjust brightness.
 
 ## Features
+- Has notify icon
 - Support multiple monitors
 - Don't affect screen capture
-- Has notify icon
+- Don't modify monitors' hardware parameters
+
 
 ## Show
 ![plot](./Extra/show.png)
