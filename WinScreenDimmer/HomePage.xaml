@@ -16,6 +16,6 @@
     <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="22" Text="{Binding ElementName=page, Path=Brightness}"></TextBlock>
     <Slider VerticalAlignment="Center" Grid.Row="1" IsEnabled="True" TickPlacement="TopLeft" IsSnapToTickEnabled="True" TickFrequency="0.2" Minimum="0.2" Maximum="1.0" Value="{Binding ElementName=page, Path=Brightness}"/>
     <mui:ModernToggleButton IsChecked="{Binding ElementName=page, Path=RunAtStartup}" Grid.Row="2" Height="25" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Run at startup" Margin="60,5,0,0"/>
-    <mui:ModernButton Grid.Row="2" Height="25" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Content="force rest gamma" Margin="60,30,0,0" Click="ModernButton_Click" />
+    <mui:ModernButton Grid.Row="2" Height="25" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Content="force to rest gamma" Margin="60,30,0,0" Click="ModernButton_Click" />
   </Grid>
 </UserControl>
