@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IWshRuntimeLibrary;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace SceenDimmer
 {
   using static System.Environment;
+  using System.IO;
   public static class Utils
   {
     private static UInt16[] GammaArray = new UInt16[3 * 256];
@@ -60,6 +62,15 @@ namespace SceenDimmer
       GCHandle GCHandle = GCHandle.Alloc(GammaArray, GCHandleType.Pinned);
       SetGammaRamp(GCHandle.AddrOfPinnedObject(), Brightness);
       GCHandle.Free();
+    }
+
+    public static void MakeShortcut()
+    {
+      WshShell shell = new WshShell();
+      IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(Utils.lnk_Path);
+      shortcut.TargetPath = Path.Combine(Environment.CurrentDirectory, "WinScreenDimmer.exe");
+      shortcut.WorkingDirectory = Environment.CurrentDirectory;
+      shortcut.Save();
     }
 
     [DllImport("GammaRamp.dll")]

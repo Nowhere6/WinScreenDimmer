@@ -59,12 +59,7 @@ namespace WinScreenDimmer
         if(value == false && RunAtStartup)
             File.Delete(Utils.lnk_Path);
         else if(value == true && !RunAtStartup)
-        {
-          WshShell shell = new WshShell();
-          IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(Utils.lnk_Path);
-          shortcut.TargetPath = Path.Combine(Environment.CurrentDirectory, "WinScreenDimmer.exe");
-          shortcut.Save();
-        }
+          Utils.MakeShortcut();
       }
     }
 
@@ -93,13 +88,7 @@ namespace WinScreenDimmer
 
       // Refresh shortcut for startup. Because user maybe move this app to other folder.
       if(RunAtStartup)
-      {
-        WshShell shell = new WshShell();
-        IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(Utils.lnk_Path);
-        shortcut.TargetPath = Path.Combine(Environment.CurrentDirectory, "WinScreenDimmer.exe");
-        shortcut.Save();
-      }
-
+        Utils.MakeShortcut();
     }
     private void RegularSetGamma(object sender, EventArgs e)
     {
